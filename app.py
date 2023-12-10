@@ -10,7 +10,7 @@ from functools import wraps
 
 from werkzeug.exceptions import NotFound
 
-from utils import (
+from todo.utils import (
     error_for_list_name,
     error_for_todo,
     find_todo_by_id,
@@ -24,7 +24,7 @@ app = Flask(__name__)
 
 app.secret_key=secrets.token_hex(32)
 
-from database_persistence import DatabasePersistence
+from todo.database_persistence import DatabasePersistence
 
 @app.before_request
 def initialize_session():
